@@ -40,6 +40,8 @@ end
 
 gem 'rails_12factor'
 
+gem 'whenever', :require => false
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
