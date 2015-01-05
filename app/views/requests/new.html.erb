@@ -1,0 +1,22 @@
+<h1>New Request</h1>
+
+<div class="sign-up">
+
+  <%= form_for @request do |f| %>
+  <div class="form-field">
+    <%= f.label :website%>
+    <%= f.text_field :website, class: 'form-control'%>
+    <%= render "shared/error_messages", obj: @request, col: :website %>
+  </div>
+
+  <div class='form-field'>
+    <%= f.label :stringmatch %>
+    <%= f.text_field :stringmatch, class: 'form-control'%>
+    <%= render "shared/error_messages", obj: @request, col: :stringmatch %>
+  </div>
+
+  <div class="form-field">
+    <%= f.submit "Create Request", class: "btn btn-default" %>
+  </div>
+  <% end %>
+</div>

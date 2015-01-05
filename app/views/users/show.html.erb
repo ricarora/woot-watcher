@@ -1,0 +1,32 @@
+<h1>User Profile</h1>
+<div>
+  <strong>Name: </strong><%= @user.name %>
+</div>
+<div>
+  <strong>Username: </strong><%= @user.username %>
+</div>
+<div>
+  <strong>Email: </strong><%= @user.email %>
+</div>
+
+<div class="button-display">
+  <%= link_to "Edit Profile", edit_user_path(@user.id), class:"btn btn-primary active", role:"button" %>
+  <%= link_to "Create Request", new_request_path, class:"btn btn-primary active", role:"button" %>
+</div>
+
+
+<% if !@user.requests.empty? %>
+  <h3>Requests: </h3>
+  <% @user.requests.each do |request| %>
+    <div>
+      Website: <%= request.website %>
+    </div>
+    <div>
+      Match: <%= request.stringmatch %>
+    </div>
+    <div class="button-display">
+      <%= link_to "Edit", edit_request_path(request.id), class:"btn btn-primary active", role:"button" %>
+      <%= button_to "Delete", request_path(request.id), method: :delete, class:"btn btn-danger" %>
+    </div>
+  <% end %>
+<% end %>

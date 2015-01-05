@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WootWatcher</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="container-fluid">
+  <header class="nav-bar navbar-fixed-top">
+    <span class="brand-header">
+      <h1>Woot Watcher</h1>
+    </span>
+
+    <span class="signin-header">
+      <% if session[:current_user] == nil %>
+        <%= link_to "Sign Up", new_user_path%> |
+        <%= link_to "Sign in", root_path %>
+      <% else %>
+        <%= link_to "#{current_user.name}", user_path(current_user.id) %> |
+        <%= link_to "Sign out", logout_path, :method => "delete"  %>
+      <% end %>
+    </span>
+
+  </header>
+  <div class="container">
+    <%= yield %>
+  </div>
+</html>

@@ -1,0 +1,22 @@
+<h1>Edit User</h1>
+
+<div class="sign-up">
+
+  <%= form_for @user do |f| %>
+  <div class="form-field">
+    <%= f.label :name%>
+    <%= f.text_field :name, class: 'form-control'%>
+    <%= render "shared/error_messages", obj: @user, col: :name %>
+  </div>
+
+  <div class='form-field'>
+    <%= f.label :email%>
+    <%= f.text_field :email, class: 'form-control'%>
+    <%= render "shared/error_messages", obj: @user, col: :email %>
+  </div>
+
+  <div class="form-field">
+    <%= f.submit "Edit Profile", class: "btn btn-default" %>
+  </div>
+  <% end %>
+</div>
