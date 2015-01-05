@@ -1,3 +1,53 @@
 // Place all the styles related to the views controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.nav-bar {
+  width: 100%;
+  height: 120px;
+  margin: 0;
+  padding: 0px;
+  background-color: white;
+  position: fixed;
+  border-bottom: 10px solid green;
+  // background-image: url("seattle-panorama.jpg");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+}
+
+.nav-bar span {
+  display: inline-block;
+}
+
+.link-header {
+  float: right;
+  margin: 50px 20px;
+  font-size: 16px;
+
+}
+
+.link-header a {
+  padding-right: 50px;
+  color:  green;
+}
+
+.signin-header {
+  float: right;
+  margin: 50px 20px;
+  font-size: 16px;
+}
+
+.signin-header a {
+  color: green;
+}
+
+.container {
+  padding: 150px;
+  text-align: center;
+  margin-top: 140;
+}
+
+.brand-header h1 {
+  padding-left: 40px;
+  padding-top: 10px;
+  color: green;
+}
