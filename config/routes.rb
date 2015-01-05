@@ -1,4 +1,7 @@
+require 'resque/server'
 Rails.application.routes.draw do
+  mount Resque::Server, :at => "/resque"
+
   get 'requests',          to: 'requests#index',      as: :requests
   get 'requests/new',      to: 'requests#new',        as: :new_request
   post 'requests',         to: 'requests#create'
